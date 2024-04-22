@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".ArtistDetailsFragment">
+
+    <data>
+        <variable
+            name="artist"
+            type="nathan.timothy.prog39402finalproject.ArtistEntity"/>
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/nameBackground"
+                android:layout_width="413dp"
+                android:layout_height="66dp"
+                android:background="#7FA0AC"
+                android:text="@{artist.name}"
+                android:gravity="center"
+                android:textStyle="normal|bold"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/imageBackground"
+                android:layout_width="353dp"
+                android:layout_height="202dp"
+                android:layout_marginTop="16dp"
+                android:background="#AEFF9800"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.275"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameBackground" />
+
+            <ImageView
+                android:id="@+id/artistIMG"
+                android:layout_width="286dp"
+                android:layout_height="171dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:elevation="2dp"
+                android:padding="1dp"
+                android:scaleType="fitCenter"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:imageResource="@{artist.imageResource}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameBackground" />
+
+            <TextView
+                android:id="@+id/membersBackground"
+                android:layout_width="213dp"
+                android:layout_height="114dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#BA5B3F"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageBackground" />
+
+            <TextView
+                android:id="@+id/membersText"
+                android:layout_width="209dp"
+                android:layout_height="79dp"
+                android:layout_marginTop="44dp"
+                android:background="#BA5B3F"
+                android:text="@{artist.members.toString()}"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="@+id/membersBackground"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/membersBackground"
+                app:layout_constraintTop_toBottomOf="@+id/imageBackground" />
+
+            <TextView
+                android:id="@+id/Background"
+                android:layout_width="140dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="16dp"
+                android:background="#B04A5A"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageBackground" />
+
+            <TextView
+                android:id="@+id/genreText"
+                android:layout_width="112dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="16dp"
+                android:background="#B04A5A"
+                android:textSize="24sp"
+                android:text="@{artist.genre}"
+                app:layout_constraintEnd_toEndOf="@+id/Background"
+                app:layout_constraintHorizontal_bias="0.464"
+                app:layout_constraintStart_toStartOf="@+id/Background"
+                app:layout_constraintTop_toTopOf="@+id/Background" />
+
+            <ImageButton
+                android:id="@+id/musicBtn"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="68dp"
+                android:padding="1dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/musicicon"
+                app:cornerRadius="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/membersBackground" />
+
+            <ImageButton
+                android:id="@+id/socialBtn"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="68dp"
+                android:padding="1dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/socmedia"
+                app:cornerRadius="10dp"
+                app:layout_constraintStart_toEndOf="@+id/musicBtn"
+                app:layout_constraintTop_toBottomOf="@+id/membersBackground" />
+
+            <ImageButton
+                android:id="@+id/plusBtn"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="68dp"
+                android:padding="1dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/plus"
+                app:cornerRadius="10dp"
+                app:layout_constraintStart_toEndOf="@+id/socialBtn"
+                app:layout_constraintTop_toBottomOf="@+id/membersBackground" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </ScrollView>
+
+</layout>

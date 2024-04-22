@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="nathan.timothy.prog39402finalproject.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_eventDetailsFragment"
+            app:destination="@id/eventDetailsFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistFragment"
+        android:name="nathan.timothy.prog39402finalproject.ArtistFragment"
+        android:label="fragment_artist"
+        tools:layout="@layout/fragment_artist" >
+        <action
+            android:id="@+id/action_artistFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment"
+            app:popUpTo="@id/artistFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="nathan.timothy.prog39402finalproject.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_addEventFragment"
+            app:destination="@id/addEventFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profileFragment_to_addArtistFragment"
+            app:destination="@id/addArtistFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profileFragment_to_eventDetailsFragment"
+            app:destination="@id/eventDetailsFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="nathan.timothy.prog39402finalproject.EventFragment"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event" >
+        <action
+            android:id="@+id/action_eventFragment_to_eventDetailsFragment"
+            app:destination="@id/eventDetailsFragment"
+            app:popUpTo="@id/eventFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_eventDetailsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEventFragment"
+        android:name="nathan.timothy.prog39402finalproject.AddEventFragment"
+        android:label="fragment_add_event"
+        tools:layout="@layout/fragment_add_event" >
+        <action
+            android:id="@+id/action_addEventFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addArtistFragment"
+        android:name="nathan.timothy.prog39402finalproject.AddArtistFragment"
+        android:label="fragment_add_artist"
+        tools:layout="@layout/fragment_add_artist" >
+        <action
+            android:id="@+id/action_addArtistFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventDetailsFragment"
+        android:name="nathan.timothy.prog39402finalproject.EventDetailsFragment"
+        android:label="EventDetailsFragment" >
+        <action
+            android:id="@+id/action_eventDetailsFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
+        <action
+            android:id="@+id/action_eventDetailsFragment_to_eventLinkFragment"
+            app:destination="@id/eventLinkFragment"
+            app:popUpTo="@id/eventDetailsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_eventDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_eventDetailsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventLinkFragment"
+        android:name="nathan.timothy.prog39402finalproject.EventLinkFragment"
+        android:label="EventLinkFragment" >
+        <action
+            android:id="@+id/action_eventLinkFragment_to_eventDetailsFragment"
+            app:destination="@id/eventDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistDetailsFragment"
+        android:name="nathan.timothy.prog39402finalproject.ArtistDetailsFragment"
+        android:label="fragment_artist_details"
+        tools:layout="@layout/fragment_artist_details" >
+        <action
+            android:id="@+id/action_artistDetailsFragment_to_artistFragment2"
+            app:destination="@id/artistFragment" />
+        <action
+            android:id="@+id/action_artistDetailsFragment_to_artistMusicLinkFragment"
+            app:destination="@id/artistMusicLinkFragment"
+            app:popUpTo="@id/artistDetailsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_artistDetailsFragment_to_artistSocialMediaLinkFragment"
+            app:destination="@id/artistSocialMediaLinkFragment"
+            app:popUpTo="@id/artistDetailsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_artistDetailsFragment_to_artistExtraLinkFragment"
+            app:destination="@id/artistExtraLinkFragment"
+            app:popUpTo="@id/artistDetailsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_artistDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistMusicLinkFragment"
+        android:name="nathan.timothy.prog39402finalproject.ArtistMusicLinkFragment"
+        android:label="fragment_artist_music_link"
+        tools:layout="@layout/fragment_artist_music_link" >
+        <action
+            android:id="@+id/action_artistMusicLinkFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistSocialMediaLinkFragment"
+        android:name="nathan.timothy.prog39402finalproject.ArtistSocialMediaLinkFragment"
+        android:label="ArtistSocialMediaLinkFragment" >
+        <action
+            android:id="@+id/action_artistSocialMediaLinkFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistExtraLinkFragment"
+        android:name="nathan.timothy.prog39402finalproject.ArtistExtraLinkFragment"
+        android:label="fragment_artist_extra_link"
+        tools:layout="@layout/fragment_artist_extra_link" >
+        <action
+            android:id="@+id/action_artistExtraLinkFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment" />
+    </fragment>
+</navigation>

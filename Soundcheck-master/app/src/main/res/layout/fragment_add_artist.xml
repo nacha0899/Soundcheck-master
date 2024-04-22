@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AddArtistFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Artist"
+                android:textColor="#000000"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--GENRE SPINNER FIELD-->
+            <Spinner
+                android:id="@+id/genreSpinner"
+                android:layout_width="209dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+            <Button
+                android:id="@+id/addBandBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="60dp"
+                android:backgroundTint="#223FE4"
+                android:text="Add Artist"
+                android:textSize="20sp"
+                app:cornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/links3Text" />
+
+            <!--ARTIST NAME INPUT FIELD-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameText"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:hint="Artist Name"
+                android:textColorHint="#3F51B5"
+                app:expandedHintEnabled="false"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEditText"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter artist name..." />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--MEMBER NAMES-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/membersText"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Members"
+                android:textColorHint="#3F51B5"
+                app:expandedHintEnabled="false"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/genreSpinner">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/membersEditText"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter members separated by comma..." />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--SOCIAL MEDIA LINKS-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/links1Text"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Social Media Link"
+                android:textColorHint="#3F51B5"
+                app:expandedHintEnabled="false"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/membersText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/links1EditText"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Instagram, Facebook, Twitter, LinkTree..." />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--STREAMING SERVICE LINK-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/links2Text"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Streaming Service Link"
+                android:textColorHint="#3F51B5"
+                app:expandedHintEnabled="false"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/links1Text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/links2EditText"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Spotify, Apple Music, Youtube..." />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--FINAL ADDITIONAL LINK-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/links3Text"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Additional Link"
+                android:textColorHint="#3F51B5"
+                app:expandedHintEnabled="false"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/links2Text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/links3EditText"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Any additional link..." />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</layout>

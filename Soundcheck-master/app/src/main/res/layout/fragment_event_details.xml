@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context=".EventDetailsFragment">
+
+    <data>
+        <variable
+            name="event"
+            type="nathan.timothy.prog39402finalproject.EventEntity"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="370dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp"
+                android:elevation="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linkBtn"
+                tools:context=".EventDetailsFragment" />
+
+            <TextView
+                android:id="@+id/eventName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:elevation="2dp"
+                android:text="@{event.name}"
+                android:textColor="#223FE4"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/eventVenue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@{event.venue}"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:elevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventName" />
+
+            <TextView
+                android:id="@+id/eventAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@{event.address}"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:elevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventVenue" />
+
+            <TextView
+                android:id="@+id/eventDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@{event.date}"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:elevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventAddress" />
+
+            <TextView
+                android:id="@+id/eventTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@{event.time}"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:elevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventDate" />
+
+            <ImageView
+                android:id="@+id/eventImage2"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="2dp"
+                android:scaleType="fitXY"
+                app:imageResource="@{event.imageResource}"
+                app:layout_constraintEnd_toEndOf="@+id/infoBackground"
+                app:layout_constraintTop_toTopOf="@+id/infoBackground" />
+
+            <TextView
+                android:id="@+id/actsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:text="Who's Playing"
+                android:textColor="#000000"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:elevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventTime" />
+
+            <TextView
+                android:id="@+id/eventArtists"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:elevation="2dp"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actsLabel" />
+
+            <TextView
+                android:id="@+id/actsBackground"
+                android:layout_width="278dp"
+                android:layout_height="210dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="-5dp"
+                android:background="#11988C"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/actsLabel" />
+
+            <TextView
+                android:id="@+id/infoBackground"
+                android:layout_width="386dp"
+                android:layout_height="189dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="-10dp"
+                android:background="#AEFF9800"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/eventVenue" />
+
+            <TextView
+                android:id="@+id/ticketBackground"
+                android:layout_width="160dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="-55dp"
+                android:layout_marginEnd="20dp"
+                android:background="#949FE4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/actsLabel" />
+
+            <TextView
+                android:id="@+id/ticketLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:elevation="2dp"
+                android:text="Available\nTickets"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/ticketBackground"
+                app:layout_constraintStart_toStartOf="@+id/ticketBackground"
+                app:layout_constraintTop_toTopOf="@+id/ticketBackground" />
+
+            <TextView
+                android:id="@+id/eventTickets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:elevation="2dp"
+                android:text='@{String.format("%d", event.tickets)}'
+                android:textColor="#FD0000"
+                android:textSize="32dp"
+                app:layout_constraintEnd_toEndOf="@+id/ticketBackground"
+                app:layout_constraintStart_toStartOf="@+id/ticketBackground"
+                app:layout_constraintTop_toBottomOf="@+id/ticketLabel" />
+
+            <Button
+                android:id="@+id/reserveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="#223FE4"
+                android:text="Reserve Ticket"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ticketBackground" />
+
+            <TextView
+                android:id="@+id/nameBackground"
+                android:layout_width="396dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="-5dp"
+                android:background="#D0F1749E"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/eventName" />
+
+            <Button
+                android:id="@+id/linkBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F44336"
+                android:text="Eventbrite"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/reserveBtn"
+                app:layout_constraintStart_toStartOf="@+id/reserveBtn"
+                app:layout_constraintTop_toBottomOf="@+id/reserveBtn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
